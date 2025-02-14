@@ -20,7 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function showMessage() {
         const randomIndex = Math.floor(Math.random() * messages.length);
-        document.getElementById("message").textContent = `${userName}, ${messages[randomIndex]}`;
+        let valentineMessage = `${userName}, ${messages[randomIndex]}`;
+        
+        if (userName.toLowerCase() === "tony" || userName.toLowerCase() === "tomi") {
+            valentineMessage += " God bless you mate, I love you so much ❤️";
+        }
+        
+        document.getElementById("message").textContent = valentineMessage;
     }
 
     document.body.style.background = "linear-gradient(to right, #ff758c, #ff7eb3)";
@@ -77,9 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
     message.style.maxWidth = "400px";
     message.style.textAlign = "center";
     
+    const footer = document.createElement("p");
+    footer.innerHTML = `Coded by <a href="https://github.com/AlbertAdekanye" target="_blank" style="color: white; text-decoration: none; font-weight: bold;">AlbertAdekanye</a>`;
+    footer.style.marginTop = "40px";
+    footer.style.fontSize = "18px";
+    footer.style.opacity = "0.8";
+
     container.appendChild(title);
     container.appendChild(greeting);
     container.appendChild(button);
     container.appendChild(message);
+    container.appendChild(footer);
     document.body.appendChild(container);
 });
