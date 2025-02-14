@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const randomIndex = Math.floor(Math.random() * messages.length);
         let valentineMessage = `${userName}, ${messages[randomIndex]}`;
         
-        if (userName.toLowerCase() === "tony" || userName.toLowerCase() === "tomi") {
-            valentineMessage += " God bless you mate, I love you so much ❤️";
+        if (userName.toLowerCase() === "tony" || userName.toLowerCase() === "tomi" || userName.toLowerCase() === "toluwalope" || userName.toLowerCase() === "ayomide"  || userName.toLowerCase() === "abraham" || userName.toLowerCase() === "albert" || userName.toLowerCase() === "james") {
+            valentineMessage += " God bless you mate, I love you so much ❤️ You are the best!";
         }
         
         document.getElementById("message").textContent = valentineMessage;
