@@ -1,10 +1,19 @@
-const messages = [
-    "Happy Valentine's Day! You are amazing! ❤️",
-    "Wishing you lots of love and happiness today! 💖",
-    "You're a wonderful friend! Have a love-filled day! 🌹",
-    "Roses are red, violets are blue, I'm lucky to have a friend like you! 🌸",
-    "Love and friendship make the world go round! Happy Valentine's! 💕"
-];
+const messages = {
+    "default": [
+        "Happy Valentine's Day! You are amazing! ❤️",
+        "Wishing you lots of love and happiness today! 💖",
+        "You're a wonderful friend! Have a love-filled day! 🌹",
+        "Roses are red, violets are blue, I'm lucky to have a friend like you! 🌸",
+        "Love and friendship make the world go round! Happy Valentine's! 💕"
+    ],
+    "tony": "Tony, you are an incredible person! I appreciate you so much. You deserve all the love in the world! 💖",
+    "tomi": "Tomi, you are one of a kind! Your kindness and love make the world brighter. Have a fantastic Valentine's! ❤️",
+    "ayomide": "Ayomide, why are you single na bby? 😘",
+    "toluwalope": "Toluwalope, you are special! Wishing you joy and happiness today! 🌹",
+    "abraham": "Abraham, you're amazing! Stay blessed and keep shining! ✨",
+    "albert": "Albert, you're an awesome friend! Hope your Valentine's Day is filled with love and happiness! 💕",
+    "tolu": "Tolu, may your day be filled with laughter, love, and joy! ❤️"
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     let userName = prompt("What's your name?");
@@ -19,13 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     greeting.style.textShadow = "1px 1px 3px rgba(0, 0, 0, 0.2)";
     
     function showMessage() {
-        const randomIndex = Math.floor(Math.random() * messages.length);
-        let valentineMessage = `${userName}, ${messages[randomIndex]}`;
-        
-        if (userName.toLowerCase() === "tony" || userName.toLowerCase() === "tomi" || userName.toLowerCase() === "toluwalope" || userName.toLowerCase() === "ayomide"  || userName.toLowerCase() === "abraham" || userName.toLowerCase() === "albert" || userName.toLowerCase() === "tolu") {
-            valentineMessage += " God bless you mate, I love you so much ❤️ You are the best!";
-        }
-        
+        let valentineMessage = messages[userName.toLowerCase()] || `${userName}, ${messages["default"][Math.floor(Math.random() * messages["default"].length)]}`;
         document.getElementById("message").textContent = valentineMessage;
     }
 
